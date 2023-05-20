@@ -1,0 +1,47 @@
+#!/usr/bin/env php
+<?php
+
+use lord\cos\debug;
+use Illuminate\Support\Facades\Artisan;
+
+define('LARAVEL_START', microtime(true));
+
+require __DIR__.'/vendor/autoload.php';
+
+$app = new \Illuminate\Foundation\Application(
+    dirname(__DIR__)."/ghs/src"
+);
+
+$app->singleton(
+    \Illuminate\Contracts\Console\Kernel::class,
+    \lord\cos\kernel::class
+);
+
+$app->singleton(
+    \Illuminate\Contracts\Debug\ExceptionHandler::class,
+    debug::class
+);
+
+$kernel = $app->make(\Illuminate\Contracts\Console\Kernel::class);
+
+$kernel->registerCommand(
+    app()->make(\Illuminate\Foundation\Console\UpCommand::class)
+);
+
+app()->register(\Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class);
+app()->register(\Illuminate\Queue\QueueServiceProvider::class);
+app()->register(\Illuminate\Cache\CacheServiceProvider::class);
+app()->instance("config", new \Illuminate\Config\Repository());
+
+$kernel->registerCommand($app->make("command.queue.work"));
+
+$kernel->registerCommand($app->make("command.queue.listen"));
+
+$status = $kernel->handle(
+    $input = new \Symfony\Component\Console\Input\ArgvInput,
+    new \Symfony\Component\Console\Output\ConsoleOutput
+);
+
+$kernel->terminate($input, $status);
+
+exit($status);

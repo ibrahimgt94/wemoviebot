@@ -1,0 +1,32 @@
+[29-Apr-2023 12:09:08 UTC] PHP Warning:  Attempt to read property "property" on null in /home/ibrhimir/public_html/blue1/src/aps/main/orgs/eadg.php on line 132
+[29-Apr-2023 12:09:08 UTC] PHP Warning:  Attempt to read property "image" on null in /home/ibrhimir/public_html/blue1/src/aps/main/orgs/view.php on line 19
+[29-Apr-2023 12:09:08 UTC] PHP Fatal error:  Uncaught TypeError: lord\plg\telg\view::info(): Argument #1 ($info) must be of type string, null given, called in /home/ibrhimir/public_html/blue1/src/aps/main/orgs/view.php on line 19 and defined in /home/ibrhimir/public_html/blue1/src/plg/telg/view.php:48
+Stack trace:
+#0 /home/ibrhimir/public_html/blue1/src/aps/main/orgs/view.php(19): lord\plg\telg\view->info()
+#1 /home/ibrhimir/public_html/blue1/src/aps/main/orgs/eadg.php(149): lord\aps\main\orgs\view->down_gls()
+#2 [internal function]: lord\aps\main\orgs\eadg->down_gls()
+#3 /home/ibrhimir/public_html/blue1/src/plg/map/xroute.php(179): call_user_func_array()
+#4 /home/ibrhimir/public_html/blue1/src/plg/map/xroute.php(150): lord\plg\map\xroute->invoker()
+#5 /home/ibrhimir/public_html/blue1/src/plg/map/map.php(36): lord\plg\map\xroute->execute()
+#6 /home/ibrhimir/public_html/blue1/src/plg/map/map.php(22): lord\plg\map\map->load_telg_map_file()
+#7 /home/ibrhimir/public_html/blue1/src/plg/bot/setup.php(90): lord\plg\map\map->booting()
+#8 /home/ibrhimir/public_html/blue1/src/plg/bot/setup.php(43): lord\plg\bot\setup->loadTelgMap()
+#9 /home/ibrhimir/public_html/blue1/src/pub/index.php(16): lord\plg\bot\setup->handel()
+#10 {main}
+  thrown in /home/ibrhimir/public_html/blue1/src/plg/telg/view.php on line 48
+[29-Apr-2023 12:09:26 UTC] PHP Warning:  Attempt to read property "property" on null in /home/ibrhimir/public_html/blue1/src/aps/main/orgs/eadg.php on line 132
+[29-Apr-2023 12:09:26 UTC] PHP Warning:  Attempt to read property "image" on null in /home/ibrhimir/public_html/blue1/src/aps/main/orgs/view.php on line 19
+[29-Apr-2023 12:09:26 UTC] PHP Fatal error:  Uncaught TypeError: lord\plg\telg\view::info(): Argument #1 ($info) must be of type string, null given, called in /home/ibrhimir/public_html/blue1/src/aps/main/orgs/view.php on line 19 and defined in /home/ibrhimir/public_html/blue1/src/plg/telg/view.php:48
+Stack trace:
+#0 /home/ibrhimir/public_html/blue1/src/aps/main/orgs/view.php(19): lord\plg\telg\view->info()
+#1 /home/ibrhimir/public_html/blue1/src/aps/main/orgs/eadg.php(149): lord\aps\main\orgs\view->down_gls()
+#2 [internal function]: lord\aps\main\orgs\eadg->down_gls()
+#3 /home/ibrhimir/public_html/blue1/src/plg/map/xroute.php(179): call_user_func_array()
+#4 /home/ibrhimir/public_html/blue1/src/plg/map/xroute.php(150): lord\plg\map\xroute->invoker()
+#5 /home/ibrhimir/public_html/blue1/src/plg/map/map.php(36): lord\plg\map\xroute->execute()
+#6 /home/ibrhimir/public_html/blue1/src/plg/map/map.php(22): lord\plg\map\map->load_telg_map_file()
+#7 /home/ibrhimir/public_html/blue1/src/plg/bot/setup.php(90): lord\plg\map\map->booting()
+#8 /home/ibrhimir/public_html/blue1/src/plg/bot/setup.php(43): lord\plg\bot\setup->loadTelgMap()
+#9 /home/ibrhimir/public_html/blue1/src/pub/index.php(16): lord\plg\bot\setup->handel()
+#10 {main}
+  thrown in /home/ibrhimir/public_html/blue1/src/plg/telg/view.php on line 48
